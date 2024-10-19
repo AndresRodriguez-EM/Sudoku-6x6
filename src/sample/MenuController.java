@@ -10,8 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.geometry.Pos;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.scene.control.Alert; // Importa Alert para mostrar el cuadro de ayuda
-import javafx.scene.control.Alert.AlertType; // Importa AlertType para definir el tipo de alerta
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
 
 public class MenuController {
@@ -20,7 +20,7 @@ public class MenuController {
     private Button btnStart;
 
     @FXML
-    private Button btnHelp; // Agrega el botón de ayuda
+    private Button btnHelp;
 
     @FXML
     private void handleStartAction(ActionEvent event) {
@@ -29,7 +29,7 @@ public class MenuController {
 
     @FXML
     private void handleHelpAction(ActionEvent event) {
-        // Crear un cuadro de diálogo de ayuda
+        // Crea un cuadro de diálogo de ayuda
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Ayuda");
         alert.setHeaderText("Instrucciones para jugar");
@@ -91,15 +91,15 @@ public class MenuController {
         gridPane.setAlignment(Pos.CENTER);
 
         // Crear un VBox para colocar el tablero y el botón de ayuda en la parte inferior
-        VBox vbox = new VBox(20); // Espacio de 20 píxeles entre elementos
-        vbox.setAlignment(Pos.CENTER); // Centrar todo dentro del VBox
+        VBox vbox = new VBox(20);
+        vbox.setAlignment(Pos.CENTER);
 
         // Agregar el GridPane (tablero) al VBox
         vbox.getChildren().add(gridPane);
 
         // Crear el botón de ayuda
         Button btnHelp = new Button("Sugerencia (5 restantes)");
-        vbox.getChildren().add(btnHelp); // Agregar el botón de ayuda debajo del tablero
+        vbox.getChildren().add(btnHelp);
 
         // Inicializar el contador de ayudas
         final int[] remainingHelps = {5};
@@ -120,7 +120,7 @@ public class MenuController {
         });
 
         // Configurar la escena con el VBox y mostrarla
-        Scene scene = new Scene(vbox, 600, 650); // Ajustar el tamaño de la ventana
+        Scene scene = new Scene(vbox, 600, 650);
         Stage stage = (Stage) btnStart.getScene().getWindow();
         stage.setScene(scene);
         stage.setTitle("Sudoku 6x6 - Juego");
