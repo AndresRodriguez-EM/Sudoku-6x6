@@ -49,7 +49,7 @@ public class SudokuBoard {
             }
         }
 
-        return false; // No se encontró una solución
+        return false;
     }
 
     // Algoritmo para mezclar un array (Fisher-Yates)
@@ -90,7 +90,7 @@ public class SudokuBoard {
             }
         }
 
-        return true; // El movimiento es válido
+        return true;
     }
 
     public int[][] getBoard() {

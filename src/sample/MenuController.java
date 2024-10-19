@@ -29,7 +29,7 @@ public class MenuController {
 
     @FXML
     private void handleHelpAction(ActionEvent event) {
-        // Crear un cuadro de diálogo de ayuda
+        // Crea un cuadro de diálogo de ayuda
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Ayuda");
         alert.setHeaderText("Instrucciones para jugar");
@@ -91,8 +91,8 @@ public class MenuController {
         gridPane.setAlignment(Pos.CENTER);
 
         // Crear un VBox para colocar el tablero y el botón de ayuda en la parte inferior
-        VBox vbox = new VBox(20); // Espacio de 20 píxeles entre elementos
-        vbox.setAlignment(Pos.CENTER); // Centrar todo dentro del VBox
+        VBox vbox = new VBox(20);
+        vbox.setAlignment(Pos.CENTER);
 
         // Agregar el GridPane (tablero) al VBox
         vbox.getChildren().add(gridPane);

@@ -10,7 +10,6 @@ public class SudokuApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            // Intenta cargar el FXML
             URL fxmlURL = getClass().getResource("/sample/menu.fxml");
             if (fxmlURL == null) {
                 System.out.println("El archivo FXML no se encuentra.");
