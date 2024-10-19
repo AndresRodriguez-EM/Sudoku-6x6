@@ -14,6 +14,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
 
+/**
+ * Controlador de la interfaz de usuario del menú principal del juego Sudoku.
+ * Esta clase maneja las acciones de los botones y la creación del tablero de Sudoku.
+ */
 public class MenuController {
 
     @FXML
@@ -22,14 +26,26 @@ public class MenuController {
     @FXML
     private Button btnHelp;
 
+    /**
+     * Maneja la acción del botón "Iniciar".
+     * Crea un nuevo tablero de Sudoku cuando se hace clic en este botón.
+     *
+     * @param event El evento de acción generado por el clic en el botón.
+     */
     @FXML
     private void handleStartAction(ActionEvent event) {
         crearTableroSudoku();
     }
 
+    /**
+     * Maneja la acción del botón "Ayuda".
+     * Muestra un cuadro de diálogo con las instrucciones del juego.
+     *
+     * @param event El evento de acción generado por el clic en el botón.
+     */
     @FXML
     private void handleHelpAction(ActionEvent event) {
-        // Crear un cuadro de diálogo de ayuda
+        // Crea un cuadro de diálogo de ayuda
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Ayuda");
         alert.setHeaderText("Instrucciones para jugar");
@@ -43,6 +59,10 @@ public class MenuController {
         alert.showAndWait(); // Muestra el cuadro de diálogo y espera a que se cierre
     }
 
+    /**
+     * Crea y muestra un nuevo tablero de Sudoku en la ventana actual.
+     * Configura un GridPane para los campos de texto donde se ingresan los números del Sudoku.
+     */
     @FXML
     private void crearTableroSudoku() {
         int gridSize = 6;
@@ -91,8 +111,8 @@ public class MenuController {
         gridPane.setAlignment(Pos.CENTER);
 
         // Crear un VBox para colocar el tablero y el botón de ayuda en la parte inferior
-        VBox vbox = new VBox(20); // Espacio de 20 píxeles entre elementos
-        vbox.setAlignment(Pos.CENTER); // Centrar todo dentro del VBox
+        VBox vbox = new VBox(20);
+        vbox.setAlignment(Pos.CENTER);
 
         // Agregar el GridPane (tablero) al VBox
         vbox.getChildren().add(gridPane);
@@ -126,6 +146,13 @@ public class MenuController {
         stage.setTitle("Sudoku 6x6 - Juego");
     }
 
+    /**
+     * Sugiere un número válido para una celda vacía en el tablero de Sudoku.
+     * Resalta la celda sugerida y muestra el número sugerido.
+     *
+     * @param board La matriz que representa el estado actual del tablero de Sudoku.
+     * @param gridPane El GridPane que contiene las celdas de texto.
+     */
     private void sugerirNumero(int[][] board, GridPane gridPane) {
         // Buscar una celda vacía y sugerir un número válido
         for (int row = 0; row < 6; row++) {
