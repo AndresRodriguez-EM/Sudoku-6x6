@@ -1,4 +1,4 @@
-package sample; // Cambia "sample" por el nombre de tu paquete
+package sample;
 
 public class SudokuValidator {
 
