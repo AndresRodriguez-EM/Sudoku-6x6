@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class SudokuBoard {
     private int[][] board;
-    private static final int SIZE = 6; // Tamaño del tablero 6x6
-    private static final int SUBGRID_ROWS = 2; // Tamaño de los bloques (2x3)
+    private static final int SIZE = 6;
+    private static final int SUBGRID_ROWS = 2;
     private static final int SUBGRID_COLS = 3;
 
     public SudokuBoard() {
@@ -17,12 +17,12 @@ public class SudokuBoard {
         // Inicializa el tablero vacío
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
-                board[i][j] = 0; // Inicializamos con celdas vacías
+                board[i][j] = 0;
             }
         }
 
         // Lógica para llenar el tablero de Sudoku
-        fillBoard(0, 0);  // Comienza llenando desde la posición (0, 0)
+        fillBoard(0, 0);
     }
 
     // Llenado del tablero usando backtracking
@@ -31,7 +31,7 @@ public class SudokuBoard {
             return true; // Si llegamos al final, el tablero está completo
         }
 
-        int nextRow = (col == SIZE - 1) ? row + 1 : row; // Pasa a la siguiente fila si estamos al final de la columna
+        int nextRow = (col == SIZE - 1) ? row + 1 : row;
         int nextCol = (col == SIZE - 1) ? 0 : col + 1;
 
         // Prueba con números del 1 al 6
@@ -45,11 +45,11 @@ public class SudokuBoard {
                 if (fillBoard(nextRow, nextCol)) {
                     return true;
                 }
-                board[row][col] = 0; // Si no funciona, deshacer el movimiento
+                board[row][col] = 0;
             }
         }
 
-        return false; // No se encontró una solución
+        return false;
     }
 
     // Algoritmo para mezclar un array (Fisher-Yates)
@@ -90,7 +90,7 @@ public class SudokuBoard {
             }
         }
 
-        return true; // El movimiento es válido
+        return true;
     }
 
     public int[][] getBoard() {
