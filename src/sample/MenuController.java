@@ -1,4 +1,4 @@
-package sample; // Cambia "sample" por el nombre de tu paquete
+package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
